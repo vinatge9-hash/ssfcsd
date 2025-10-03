@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew & Beans Coffee Shop - Home</title>
+  <meta name="description" content="A cozy, modern coffee shop experience featuring craft espresso drinks, pastry pairings, and a welcoming atmosphere." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased">
+  <!-- Header / Navigation -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold text-gray-800" style="font-family: 'Montserrat', sans-serif;">Brew & Beans</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Home</a>
+          <a href="dashboard.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Dashboard</a>
+          <a href="about.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">About</a>
+          <a href="menu.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Menu</a>
+          <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Contact</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-800 hover:text-gray-600 focus:outline-none">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4 pt-2">
+      <a href="index.html" class="block py-2 text-gray-700">Home</a>
+      <a href="dashboard.html" class="block py-2 text-gray-700">Dashboard</a>
+      <a href="about.html" class="block py-2 text-gray-700">About</a>
+      <a href="menu.html" class="block py-2 text-gray-700">Menu</a>
+      <a href="contact.html" class="block py-2 text-gray-700">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative min-h-screen bg-cover bg-center" style="background-image: url('https://pixabay.com/get/g970f2bce5ac005896ba0f038839cc09deb25e7fa021b7a894e5d9bddb4fd03deec2ea3212bf2edf4141dc69f33a68c1d0b43a69b6c90af41f8e9906d0be9588c_640.jpg');">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 min-h-screen flex items-center justify-center px-4 text-center">
+      <div class="max-w-3xl mx-auto text-white">
+        <h1 class="font-[Montserrat] text-4xl md:text-5xl font-bold mb-4">Experience the art of coffee</h1>
+        <p class="font-[Open Sans] text-lg md:text-xl mb-8">Small-batch espresso, carefully sourced pastries, and a warm community vibe.</p>
+        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+          <a href="menu.html" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300">View Menu</a>
+          <a href="contact.html" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">Find Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <main class="py-16 bg-white">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Highlights">
+      <h2 class="font-[Montserrat] text-3xl md:text-4xl font-bold text-gray-800 mb-6">What makes Brew & Beans special</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="bg-gray-50 rounded-xl p-6 flex flex-col items-start">
+          <img src="https://images.unsplash.com/photo-1629248989841-13693e776778?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw2fHxlc3ByZXNzbyUyMHNob3QlMjBpbiUyMGN1cHxlbnwwfDB8fHwxNzU5NDk0NjEyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Espresso shot" class="w-full h-48 object-cover rounded-md mb-4" />
+          <h3 class="font-[Montserrat] text-xl font-bold mb-2">Craft Espresso</h3>
+          <p class="font-[Open Sans] text-sm text-gray-600">Single-origin beans, precise extraction, balanced aromas.</p>
+        </article>
+        <article class="bg-gray-50 rounded-xl p-6 flex flex-col items-start">
+          <img src="https://images.pexels.com/photos/2559312/pexels-photo-2559312.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Latte art" class="w-full h-48 object-cover rounded-md mb-4" />
+          <h3 class="font-[Montserrat] text-xl font-bold mb-2">Milk & Style</h3>
+          <p class="font-[Open Sans] text-sm text-gray-600">Creamy textures, velvety microfoam, latte artistry.</p>
+        </article>
+        <article class="bg-gray-50 rounded-xl p-6 flex flex-col items-start">
+          <img src="https://pixabay.com/get/g894a212c4daa941d1754bfd80de2b06e7c6dbd7d607cf89a6468a6ef3032c78e2c0acc9a046fc3e599d7ec9b2ba4ec78be32ae021a4d43550d53175e38aba584_640.jpg" alt="Pastry selection" class="w-full h-48 object-cover rounded-md mb-4" />
+          <h3 class="font-[Montserrat] text-xl font-bold mb-2">Fresh Pastries</h3>
+          <p class="font-[Open Sans] text-sm text-gray-600">Croissants, muffins, and seasonal shelves daily.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- About Preview -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="font-[Montserrat] text-2xl md:text-3xl font-bold mb-4">Our Story</h2>
+        <p class="font-[Open Sans] text-gray-700">Brew & Beans started as a neighborhood gathering place for neighbors to share conversations over hot coffee and fresh pastries. We source beans from small, ethical farms and roast in small batches to preserve flavor and character.</p>
+      </div>
+      <div>
+        <img src="https://pixabay.com/get/gd05d319e631c678c56e76893fb1b5efb85dc19d11bad7c22a19954c0afedd957fb0369fb719651bb7c9161678e0ef79a66a2262e97b8a99d4424c2270d87e41d_640.jpg" alt="Cozy cafe seating area" class="w-full h-64 object-cover rounded-xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#3C2415] text-white pt-10 pb-6" aria-label="Footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-bold text-lg mb-2" style="font-family: 'Montserrat', sans-serif;">Brew & Beans</h4>
+        <p class="text-xs text-gray-200">Community-driven coffee shop with a passion for quality and comfort.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-2">Hours</h5>
+        <p class="text-sm text-gray-200">Mon–Fri: 7:00 am – 6:00 pm</p>
+        <p class="text-sm text-gray-200">Sat–Sun: 8:00 am – 5:00 pm</p>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-2">Quick Links</h5>
+        <ul class="space-y-1 text-sm">
+          <li><a href="menu.html" class="underline hover:no-underline">Menu</a></li>
+          <li><a href="about.html" class="underline hover:no-underline">About</a></li>
+          <li><a href="contact.html" class="underline hover:no-underline">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-2">Visit</h5>
+        <p class="text-sm">123 Cozy Lane, Hometown</p>
+        <p class="text-sm">City, ST 00000</p>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-6"></div>
+    <div class="text-center text-xs text-gray-300 mt-4">© 2025 Brew & Beans. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
