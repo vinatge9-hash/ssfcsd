@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew & Beans Coffee Shop - Dashboard</title>
+  <meta name="description" content="Admin dashboard for Brew & Beans: see orders, visitors, menu management, reservations, and inventory." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <!-- Sidebar Layout -->
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-900 border-r border-gray-800 hidden md:block">
+      <div class="p-6 border-b border-gray-800">
+        <h2 class="text-xl font-bold" style="font-family: 'Montserrat', sans-serif;">Brew & Beans</h2>
+        <p class="text-sm text-gray-400">Dashboard</p>
+      </div>
+      <nav class="p-4 space-y-2">
+        <a href="dashboard.html" class="flex items-center gap-2 p-2 rounded hover:bg-gray-800 transition"><span class="inline-block w-3 h-3 rounded-full bg-green-500"></span> Dashboard</a>
+        <a href="#orders" class="flex items-center gap-2 p-2 rounded hover:bg-gray-800 transition">Recent Orders</a>
+        <a href="#menu" class="flex items-center gap-2 p-2 rounded hover:bg-gray-800 transition">Menu Items</a>
+        <a href="#inventory" class="flex items-center gap-2 p-2 rounded hover:bg-gray-800 transition">Inventory</a>
+        <a href="#reservations" class="flex items-center gap-2 p-2 rounded hover:bg-gray-800 transition">Reservations</a>
+        <a href="#settings" class="flex items-center gap-2 p-2 rounded hover:bg-gray-800 transition">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-auto">
+      <header class="flex items-center justify-between mb-6">
+        <div>
+          <h1 class="text-2xl font-bold" style="font-family: 'Montserrat', sans-serif;">Brew & Beans Dashboard</h1>
+          <p class="text-sm text-gray-400">Today is a productive day. Quick glance at live placeholders.</p>
+        </div>
+        <div class="text-sm text-gray-400">Date: 2025-10-03</div>
+      </header>
+
+      <!-- Summary Cards -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-gray-800 rounded-lg p-4 shadow hover:bg-gray-700 transition">
+          <div class="text-xs uppercase text-gray-400">Today’s Orders</div>
+          <div class="text-2xl font-semibold">42</div>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-4 shadow hover:bg-gray-700 transition">
+          <div class="text-xs uppercase text-gray-400">Visitors</div>
+          <div class="text-2xl font-semibold">128</div>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-4 shadow hover:bg-gray-700 transition">
+          <div class="text-xs uppercase text-gray-400">Revenue Today</div>
+          <div class="text-2xl font-semibold">$1,284</div>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-4 shadow hover:bg-gray-700 transition">
+          <div class="text-xs uppercase text-gray-400">Low Stock Alerts</div>
+          <div class="text-2xl font-semibold">3</div>
+        </div>
+      </section>
+
+      <!-- Quick Actions / Menu Management -->
+      <section id="menu" class="bg-gray-900 rounded-lg p-6 mb-8" aria-labelledby="manage-menu">
+        <h2 id="manage-menu" class="text-xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Add / Delete Menu Item</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <form id="add-item-form" class="bg-gray-800 rounded-lg p-4 space-y-3">
+            <div>
+              <label class="block text-sm font-semibold mb-1">Item Name</label>
+              <input id="item-name" type="text" required class="w-full border border-gray-700 rounded px-3 py-2 bg-gray-900" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1">Price</label>
+              <input id="item-price" type="text" required class="w-full border border-gray-700 rounded px-3 py-2 bg-gray-900" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1">Category</label>
+              <select id="item-category" class="w-full border border-gray-700 rounded px-3 py-2 bg-gray-900">
+                <option>Drink</option>
+                <option>Pastry</option>
+                <option>Snack</option>
+              </select>
+            </div>
+            <button type="submit" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded">Add Item</button>
+          </form>
+          <div class="bg-gray-800 rounded-lg p-4">
+            <div class="text-sm text-gray-400 mb-2">Examples</div>
+            <ul id="examples-list" class="text-sm space-y-1 text-gray-100 list-disc pl-5">
+              <li>Americano — $3.50</li>
+              <li>Blueberry Muffin — $3.75</li>
+              <li>Chai Latte — $4.25</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu Items List (Manageable) -->
+      <section id="inventory" class="bg-gray-900 rounded-lg p-6 mb-8" aria-labelledby="menu-items">
+        <h2 id="menu-items" class="text-xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Menu Items</h2>
+        <ul id="menu-items-list" class="divide-y divide-gray-700">
+          <li class="flex justify-between items-center p-3">
+            <span>Americano</span>
+            <span class="flex items-center gap-2"><span class="text-sm text-gray-400">$3.50</span><button class="text-red-400 hover:text-red-600 ml-4">Delete</button></span>
+          </li>
+          <li class="flex justify-between items-center p-3">
+            <span>Cappuccino</span>
+            <span class="flex items-center gap-2"><span class="text-sm text-gray-400">$4.25</span><button class="text-red-400 hover:text-red-600 ml-4">Delete</button></span>
+          </li>
+          <li class="flex justify-between items-center p-3">
+            <span>Croissant</span>
+            <span class="flex items-center gap-2"><span class="text-sm text-gray-400">$3.75</span><button class="text-red-400 hover:text-red-600 ml-4">Delete</button></span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Recent Orders -->
+      <section id="orders" class="bg-gray-900 rounded-lg p-6 mb-8" aria-labelledby="orders-title">
+        <h2 id="orders-title" class="text-xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Recent Orders</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left text-gray-200">
+            <thead class="border-b border-gray-700">
+              <tr>
+                <th class="py-2 px-3">Order #</th>
+                <th class="py-2 px-3">Customer</th>
+                <th class="py-2 px-3">Items</th>
+                <th class="py-2 px-3">Total</th>
+                <th class="py-2 px-3">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-700">
+                <td class="py-2 px-3">#1001</td>
+                <td class="py-2 px-3">Alex Kim</td>
+                <td class="py-2 px-3">Latte, Croissant</td>
+                <td class="py-2 px-3">$9.25</td>
+                <td class="py-2 px-3">Completed</td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="py-2 px-3">#1002</td>
+                <td class="py-2 px-3">Maria Lopez</td>
+                <td class="py-2 px-3">Espresso, Muffin</td>
+                <td class="py-2 px-3">$7.50</td>
+                <td class="py-2 px-3">In Progress</td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="py-2 px-3">#1003</td>
+                <td class="py-2 px-3">Daniel Chen</td>
+                <td class="py-2 px-3">Americano</td>
+                <td class="py-2 px-3">$3.50</td>
+                <td class="py-2 px-3">Completed</td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="py-2 px-3">#1004</td>
+                <td class="py-2 px-3">Priya N.</td>
+                <td class="py-2 px-3">Chai Latte, Cookie</td>
+                <td class="py-2 px-3">$5.75</td>
+                <td class="py-2 px-3">Preparing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Reservations -->
+      <section id="reservations" class="bg-gray-900 rounded-lg p-6 mb-8" aria-labelledby="reservations-title">
+        <h2 id="reservations-title" class="text-xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Upcoming Reservations</h2>
+        <table class="w-full text-sm text-left text-gray-200">
+          <thead class="border-b border-gray-700">
+            <tr>
+              <th class="py-2 px-3">Time</th>
+              <th class="py-2 px-3">Guest</th>
+              <th class="py-2 px-3">Party</th>
+              <th class="py-2 px-3">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-700">
+              <td class="py-2 px-3">6:30 PM</td>
+              <td class="py-2 px-3">Sophia Lee</td>
+              <td class="py-2 px-3">4</td>
+              <td class="py-2 px-3">Birthday dessert</td>
+            </tr>
+            <tr class="border-b border-gray-700">
+              <td class="py-2 px-3">7:15 PM</td>
+              <td class="py-2 px-3">Jon Park</td>
+              <td class="py-2 px-3">2</td>
+              <td class="py-2 px-3">Catering pickup</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Inventory Snapshot -->
+      <section id="inventory" class="bg-gray-900 rounded-lg p-6 mb-8" aria-labelledby="inventory-title">
+        <h2 id="inventory-title" class="text-xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Inventory Snapshot</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="bg-gray-800 rounded p-3">
+            <div class="text-xs text-gray-400">Beans</div>
+            <div class="text-lg font-semibold">48 lbs</div>
+            <div class="h-2 bg-gray-700 rounded mt-2"><div class="h-2 bg-green-500 rounded" style="width:80%"></div></div>
+          </div>
+          <div class="bg-gray-800 rounded p-3">
+            <div class="text-xs text-gray-400">Espresso</div>
+            <div class="text-lg font-semibold">20 lbs</div>
+            <div class="h-2 bg-gray-700 rounded mt-2"><div class="h-2 bg-yellow-500 rounded" style="width:60%"></div></div>
+          </div>
+          <div class="bg-gray-800 rounded p-3">
+            <div class="text-xs text-gray-400">Milk</div>
+            <div class="text-lg font-semibold">30 L</div>
+            <div class="h-2 bg-gray-700 rounded mt-2"><div class="h-2 bg-green-400 rounded" style="width:90%"></div></div>
+          </div>
+          <div class="bg-gray-800 rounded p-3">
+            <div class="text-xs text-gray-400">Pastry Mix</div>
+            <div class="text-lg font-semibold">Assets</div>
+            <div class="h-2 bg-gray-700 rounded mt-2"><div class="h-2 bg-red-500 rounded" style="width:40%"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sales Chart (placeholder) -->
+      <section class="bg-gray-900 rounded-lg p-6" aria-labelledby="chart-title">
+        <h2 id="chart-title" class="text-xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Orders Over Last 7 Days</h2>
+        <svg width="100%" height="180" viewBox="0 0 700 180" role="img" aria-label="7-day orders chart">
+          <polyline fill="none" stroke="#34d399" stroke-width="3" points="0,120 100,110 200,140 300,90 400,120 500,80 600,100" />
+          <line x1="0" y1="160" x2="700" y2="160" stroke="gray" stroke-width="1" />
+          <line x1="0" y1="0" x2="0" y2="180" stroke="gray" stroke-width="1" />
+        </svg>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Add / Delete Menu Items (frontend only mockup)
+    const addForm = document.getElementById('add-item-form');
+    const menuItemsList = document.getElementById('menu-items-list');
+    const examplesList = document.getElementById('examples-list');
+
+    function addMenuItem(name, price, category) {
+      const li = document.createElement('li');
+      li.className = 'flex justify-between items-center p-3';
+      li.innerHTML = `<span>${name}</span><span class="flex items-center gap-2"><span class="text-sm text-gray-400">${price}</span><button class="text-red-400 hover:text-red-600 ml-4">Delete</button></span>`;
+      menuItemsList.appendChild(li);
+      // wire delete
+      li.querySelector('button').addEventListener('click', () => li.remove());
+    }
+
+    if (addForm) {
+      addForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('item-name').value.trim();
+        const price = document.getElementById('item-price').value.trim();
+        const category = document.getElementById('item-category').value;
+        if (name && price) {
+          addMenuItem(name, `$${price}`, category);
+          addForm.reset();
+        }
+      });
+    }
+
+    // Basic delete on initial items (bind delete handlers)
+    menuItemsList.querySelectorAll('li').forEach(li => {
+      const delBtn = li.querySelector('button');
+      if (delBtn) delBtn.addEventListener('click', () => li.remove());
+    });
+  </script>
+</body>
+</html>
