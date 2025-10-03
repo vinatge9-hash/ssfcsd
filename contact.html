@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew & Beans Coffee Shop - Contact</title>
+  <meta name="description" content="Get in touch with Brew & Beans for questions, events, or catering inquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased">
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold text-gray-800" style="font-family: 'Montserrat', sans-serif;">Brew & Beans</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Home</a>
+          <a href="dashboard.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Dashboard</a>
+          <a href="about.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">About</a>
+          <a href="menu.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Menu</a>
+          <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition-all duration-300">Contact</a>
+        </nav>
+        <div class="md:hidden"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative min-h-screen bg-cover bg-center" style="background-image: url('https://pixabay.com/get/g210d52399f063899e903c02cda41663c31505e39422ef35b57df254b72e2a825d4514e0563a023980d8c232fb637ce6b12fd74bf34f160c97f37e6f40f18349b_640.jpg');">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 min-h-screen flex items-center justify-center px-4 text-center">
+      <div class="max-w-2xl mx-auto text-white">
+        <h1 class="font-[Montserrat] text-4xl md:text-5xl font-bold mb-4">We’d love to hear from you</h1>
+        <p class="font-[Open Sans] text-lg mb-6">Questions, events, catering inquiries, or just saying hello—reach out anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="py-12 bg-white">
+    <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <form action="#" method="post" class="space-y-4 bg-gray-50 p-6 rounded-xl shadow-sm">
+        <div>
+          <label for="name" class="block text-sm font-semibold mb-1">Name</label>
+          <input id="name" name="name" type="text" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+          <input id="email" name="email" type="email" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-semibold mb-1">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
+        </div>
+        <button type="submit" class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-[#3C2415] text-white py-6" aria-label="Footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="font-bold mb-2" style="font-family: 'Montserrat', sans-serif;">Brew & Beans</h4>
+        <p class="text-sm text-gray-200">Drop us a note and we’ll get back within one business day.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-2">Contact</h5>
+        <p class="text-sm text-gray-200">Email: hello@brewandbeans.example</p>
+        <p class="text-sm text-gray-200">Phone: (555) 123-4567</p>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-2">Visit</h5>
+        <p class="text-sm text-gray-200">123 Cozy Lane</p>
+        <p class="text-sm text-gray-200">City, ST 00000</p>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-6"></div>
+    <div class="text-center text-xs text-gray-300 mt-4">© 2025 Brew & Beans. All rights reserved.</div>
+  </footer>
+</body>
+</html>
